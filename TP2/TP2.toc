@@ -1,0 +1,16 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1. }Mesures électrochimiques des performances de la photodiode}{1}{section.1}%
+\contentsline {subsection}{\numberline {1. 1. }Dispositif de mesure}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1. 2. }\'{E}talonnage de la source lumineuse}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1. 3. }Exploiter une caractéristique de photodiode}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1. 4. }Tracés des caractéristiques d'une photodiode commerciale}{5}{subsection.1.4}%
+\contentsline {section}{\numberline {2. }Protocole}{6}{section.2}%
+\contentsline {subsection}{\numberline {2. 1. }Préparation de l'électrode de \ce {TiO2} - {{\FAthree \symbol {47}}}~ \SI {1}{\hour }}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2. 2. }Coloration de l’électrode - {{\FAthree \symbol {47}}}~ \SI {30}{\minute }}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2. 3. }Coloration de la contre-électrode - {{\FAthree \symbol {47}}}~ \SI {30}{\minute }}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2. 4. }Assemblage de la cellule solaire - {{\FAthree \symbol {47}}}~ \SI {30}{\minute }}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2. 5. }Mesure des performances électriques - {{\FAthree \symbol {47}}}~ \SI {1}{\hour }}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3. }Discussion}{7}{section.3}%
+\contentsline {subsection}{\numberline {3. 1. }Rôle de l'électrolyte}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3. 2. }Rôle du colorant}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3. 3. }Performance de votre cellule solaire}{10}{subsection.3.3}%
