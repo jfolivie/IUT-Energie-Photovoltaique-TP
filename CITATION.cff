@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Merci de citer ce cours si vous l'utilisez."
+title: "Matériaux pour l'énergie : photovoltaïque - Travaux pratiques : assemblage d'une cellule à colorant"
+authors:
+  - family-names: Olivieri
+    given-names: Jean-François
+    orcid: "https://orcid.org/0000-0003-0719-1789"
+doi: TO_COMPLETE
+date-released: 2026
+licence: CC-BY-NC-SA 3.0
+abstract: >
+  La séance de travaux pratiques a pour objet la synthèse et la mise en forme des principaux composants d'une cellule photovoltaïque à colorant (Grätzel). Pour cela, les étudiants doivent : (1) Synthétiser et caractériser une phase nanoparticulaire d'anatase. (2) Éventuellement, mettre en forme la couche d'ITO sur un support en verre (voir l'ajout au TP1 dans le fichier `Section-Revetement-ITO.tex`). (3) Étudier théoriquement les phases formées à l'aide du modèle des charges partielles. (4) Assembler la cellule photovoltaïque, réaliser les mesures au banc optique et comparer les performances à celles d'une cellule commerciale.
+keywords:
+  - photovoltaïque
+  - cellule à colorant
+  - sol-gel

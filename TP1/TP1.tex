@@ -1,10 +1,5 @@
-\documentclass[twoside,a4paper,11pt,addpoints,answers]{exam}%answers,
+\documentclass[twoside,a4paper,11pt,addpoints]{exam}%answers,
 
-
-
-\title{XX 1}
-\date{}
-\author{Juliette Fenogli}
 
 
 \usepackage{siunitx}
@@ -78,6 +73,8 @@ colframe=black!75!black,left=7mm}
 
 \begin{document}
 
+
+
 \begin{minipage}{0.33\textwidth}
 Noms-Prénoms du binôme
 \end{minipage}\begin{minipage}{0.33\textwidth}
@@ -85,9 +82,6 @@ $n^\circ 1$ :
 \end{minipage}\begin{minipage}{0.33\textwidth}
 $n^\circ 2$ :
 \end{minipage}
-
-
-
 \tito{Synthèse de \ce{TiO2} et conception d'un verre conducteur}
 
 \paragraph*{But} 
@@ -109,7 +103,9 @@ On notera par $X^\star$ une espèce chimique $X$ photoexcitée.
 
 \tableofcontents
 
-\`{A} l'ère du dérèglement climatique, il est impératif de trouver une source d'énergie décarbonnée, non polluante et abondante. L'énergie solaire reçue sur Terre est 11000 fois supérieure à la demande énergétique mondiale et peut être utilisée sans produire de pollution, comme le montrent les stratégies photosynthétiques dans le vivant.
+\newpage
+
+\`{A} l'ère du dérèglement climatique, il est impératif de trouver une source d'énergie décarbonnée, non polluante et abondante. L'énergie solaire reçue sur Terre est nettement supérieure à la demande énergétique mondiale et peut être utilisée sans produire de pollution, comme le montrent les stratégies photosynthétiques dans le vivant.
 
 En s'inspirant de la photosynthèse, Michael Grätzel a développé les cellules à colorant, une technologie prometteuse parmi les cellules photovoltaïques de troisième génération.
 
@@ -121,31 +117,402 @@ En s'inspirant de la photosynthèse, Michael Grätzel a développé les cellules
 \end{minipage}
 \end{center}
 
-Les cellules à colorant doivent être vues comme des photopiles que l'on peut schématiser de la manière suivante : 
+Les cellules à colorant peuvent être vues comme des photopiles que l'on peut schématiser de la manière suivante : 
 
 \begin{align*}
  ITO (s) | TiO_2(s) | D^+ (ads); D (ads) | I_3^-(aq) ; I^-(aq) | ITO(s)
 \end{align*}
 où $D$ est une espèce chimique organique, adsorbée à la surface du dioxyde de titane.
 
-Cette pile est constituée de deux demi-piles de troisième espèce, qui mettent en jeux trois couples rédox : $D^+(ads) / D(ads)$, $\ce{D^+ (ads)} / \ce{D^\star (ads)}$ et $\ce{I_3^- (aq)} / \ce{I^- (aq)}$.
+Cette pile est constituée de deux demi-piles de troisième espèce, qui mettent en jeux trois couples redox : $D^+(ads) / D(ads)$, $\ce{D^+ (ads)} / \ce{D^\star (ads)}$ et $\ce{I_3^- (aq)} / \ce{I^- (aq)}$.
 
-\newpage
 
 \section{Questions introductives}
 
-Nous allons chercher à utiliser les données et documents suivants afin de comprendre les propriétés  fonctionnement de la cellule de Grätzel 
+On va chercher à vérifier par un calcul d'ordre de grandeur si l'énergie solaire reçue sur Terre est suffisante pour couvrir la demande énergétique mondiale.
+
+\textbf{Données :}
+\begin{itemize}
+\item Puissance solaire émise par le soleil : $P_{sol} = \SI{3.8e26}{\watt}$.
+\item Rayon moyen de l'orbite terrestre : $d_{T-S} = \SI{1.5e11}{\meter}$.
+\item Rayon de la Terre : $R_{T} = \SI{6.4e6}{\meter}$.
+\item Consommation énergétique mondiale annuelle : $E_{mondiale} = \SI{5.0e20}{\joule}$.
+\item Reflectance moyenne de la Terre : $r = 0.3$.
+\end{itemize}
+
+\begin{questions}
+\question[2\half] Calculer l'énergie reçue par la Terre en une année. Comparer cette valeur à la consommation énergétique mondiale annuelle.
+
+\begin{mybox}
+   \begin{solution}[10cm]
+      \textbf{Puissance reçue par la Terre :} [\textbf{1.0}]
+
+      On doit calculer la puissance surfacique reçue par la Terre, en considérant que le Soleil émet de manière isotrope. Faisons un bilan d'énergie :  
+
+      \begin{align*}
+         \bar{P}_T = \bar{P}_{sol} - \bar{P}_{ref}
+      \end{align*}
+
+      Avec $\bar{P}_T$ la puissance surfacique reçue par la Terre, $\bar{P}_{sol}$ la puissance surfacique émise par le Soleil et $\bar{P}_{ref}$ la puissance surfacique réfléchie par la Terre.
+
+      \begin{align*}
+         \bar{P}_T = \frac{P_T}{4 \pi R_T^2} \quad 
+         \bar{P}_{sol} = \frac{P_{sol}}{4 \pi d_{T-S}^2} \quad
+         \bar{P}_{ref} = r \cdot \bar{P}_{sol} = r \cdot \frac{P_{sol}}{4 \pi d_{T-S}^2}
+      \end{align*}
+
+      Donc : 
+
+      \begin{align*}
+         P_{T} = P_{sol} \cdot \frac{\pi R_T^2}{4 \pi d_{T-S}^2} \cdot (1-r)
+      \end{align*}
+
+      \textbf{Calcul de l'énergie reçue en une année :} [\textbf{1.0}]
+      \begin{align*}
+         E_T = P_T \cdot \Delta t = P_{sol} \cdot \frac{R_T^2}{4 d_{T-S}^2} \cdot (1-r) \cdot \Delta t
+      \end{align*}
+      avec $\Delta t = \SI{3.15e7}{\second}$ le temps en une année.
+      
+      \begin{align*}
+         E_T = 3.8 \cdot 10^{26} \cdot \frac{(6.4 \cdot 10^6)^2}{4 \cdot (1.5 \cdot 10^{11})^2} \cdot (1-0.3) \cdot 3.15 \cdot 10^7 = 1.2 \cdot 10^{24} ~ \si{\joule}
+      \end{align*}
+
+      \textbf{Comparaison avec la consommation mondiale :} [\textbf{0.5}]
+      \begin{align*}
+         \frac{E_T}{E_{mondiale}} = \frac{1.2 \cdot 10^{24}}{5.0 \cdot 10^{20}} = 2400
+      \end{align*}
+      
+   \end{solution}
+\end{mybox}
+
+   \question[1] Que devrait être l'efficacité minimale des cellules photovoltaïques pour couvrir la consommation énergétique mondiale annuelle ? Quelle est la limite principale de votre calcul ?
+
+   \begin{mybox}
+      \begin{solution}[5cm]
+         Il faudrait au minimum un rendement de $ \eta = \frac{100}{2400} \approx 4.2 \cdot 10^{-2} ~ \si{\percent} $ pour couvrir la consommation énergétique mondiale annuelle.
+         
+         La limite de ce calcul est qu'il ne prend pas en compte les pertes liées à la surface effective de captation de l'énergie solaire (océans, nuit, nuages, etc.) et à la surface disponible pour l'installation des cellules photovoltaïques.
+
+         Dans une moindre mesure, il ne prend pas en compte les pertes énergétiques liées au stockage et au transport de l'énergie.
+      \end{solution}
+   \end{mybox}
+
+\setcounter{foo}{\value{question}}
+
+\end{questions}
+
+
+\section{Synthèse de \ce{TiO2} par voie micro-onde}
+
+\subsection{Protocole}
+
+%**Matériel nécessaire :**  
+%- Solution de TiCl4  
+%- Eau distillée  
+%- Soude (NaOH) 5 mol.L⁻¹  
+%- Acide nitrique (HNO3) 1 mol.L⁻¹  
+%- Réacteurs en téflon compatibles avec un four à micro-ondes monomode (type CEM)  
+%- Centrifugeuse capable d'atteindre 16 500 tours/min (29 220 g)  
+%- Agitateur magnétique  
+%- Pipettes graduées et cylindres mésurants  
+%- Balance précise  
+%- Système de séchage sous vide  
+
+\begin{center}
+\begin{minipage}{0.20\textwidth}
+\centering
+\color{red} \Huge\faWarning
+\end{minipage}\begin{minipage}{0.80\textwidth}
+\color{red} Manipuler le \ce{TiCl4} avec prudence en raison de sa réactivité avec l'eau et de sa toxicité.
+Il faudra prévoir deux DRX : une avant et une après le passage au micro-onde.
+
+Toute les quantités sont indiquées pour la préparation d'une seule suspension. Il faudra diviser les quantités par le nombre de binômes que vous êtes.
+\end{minipage}
+\end{center}
+%\attention{Manipuler le \ce{TiCl4} avec prudence en raison de sa réactivité avec l'eau et de sa toxicité.}
+
+\begin{enumerate}
+\item Hydrolyse du \ce{TiCl4} (réalisée par le technicien avant votre arrivée) :
+\begin{itemize}
+   \item Introduire \SI{14,0}{\milli\liter} de solution de \ce{TiCl4} dans \SI{100}{\milli\liter} d'eau distillée avec précaution.  
+   \item Laisser la solution réagir (hydrolyse) à température ambiante pendant une nuit jusqu'à obtention d'une solution limpide.  
+\end{itemize}
+
+\item Ajustement du $pH$ :
+\begin{itemize}
+   \item Ajouter progressivement de la soude à \SI{5}{\mole\per\liter} pour ajuster le $pH$ à $6$ (environ \SI{125}{\milli\liter} nécessaires).  
+   \item Agiter la solution pendant \SI{1}{\hour} à l'aide d'un agitateur magnétique.  
+   \item Contrôler de nouveau le $pH$ et ajuster si nécessaire. 
+\end{itemize}
+ 
+
+\item Dilution : Compléter la solution avec de l'eau distillée jusqu'à atteindre un volume total de \SI{250}{\milli\liter}, de sorte à obtenir une concentration finale en \ce{Ti^{4+}} de \SI{0.5}{\mole\per\liter}.  
+
+\item Traitement hydrothermal :
+\begin{itemize}
+   \item Sous agitation, transférer la suspension dans des réacteurs en verre.%téflon.  
+   \item Placer les réacteurs dans un four à micro-ondes monomode (CEM).
+   \item Chauffer la suspension à \SI{200}{\celsius} en \SI{10}{\minute}, puis maintenir cette température pendant \SI{1}{\hour}.  
+   \item La pression interne du réacteur devrait atteindre environ $14$-\SI{15}{\bar}.  
+\end{itemize}
+
+\item Récupération du solide  : \`{A} la sortie du réacteur, séparer les suspensions par centrifugation à \SI{6500}{{tour}\per\minute} pendant \SI{20}{\minute}.% 16500 tours/min -> 29220 g 
+
+\item Lavages successifs :
+\begin{itemize}
+\item Effectuer un premier lavage du précipité à l'eau distillée.  
+\item Procéder à un lavage avec de l'acide nitrique (\ce{HNO3}) à \SI{1}{\mole\per\liter}.  
+\item Effectuer un dernier lavage à l'eau distillée.  
+\end{itemize}
+
+\item Séchage du solide :
+\begin{itemize}
+\item Placer le solide obtenu dans un système de séchage sous vide à température ambiante.  
+\item Laisser sécher pendant une nuit. 
+\end{itemize} 
+\end{enumerate}
+
+%- Porter des équipements de protection individuelle (gants, lunettes, blouse de laboratoire).  
+%- Effectuer les manipulations sous hotte aspirante lorsque nécessaire.  
+
+Ce protocole permet d'obtenir un solide à base de titane par méthode hydrothermale.
+
+\subsection{Questions sur la synthèse de \ce{TiO2}}
+
+\begin{questions}
+\setcounter{question}{\thefoo}
+
+\question[1] Écrire l'équation d'hydrolyse du \ce{TiCl4} en milieu aqueux en supposant que l'hydrolyse est totale.
+
+\begin{mybox}
+\begin{solution}[5cm]
+\begin{align*}
+\ce{TiCl4 (aq)+ 4 HO^-(aq) -> Ti(OH)4 (aq) + 4 Cl^- (aq)}
+\end{align*}
+
+Sous la forme d'un aquacomplexe, on pourrait écrire : 
+\begin{align*}
+   \ce{Ti(OH)_4 (H2O)_2}
+\end{align*}
+
+\end{solution}
+\end{mybox}
+
+
+\question[2] Justifier que le technicien ait laissé la solution s'hydrolyser pendant toute la nuit.
+
+\begin{mybox}
+\begin{solution}[5cm]
+
+\ce{Cl-} est un ligand plus dur \ce{H2O}. Le \ce{Ti} étant à haut degré d'oxydation, il est probablement assez dur, rendant le complexe relativement \textbf{inerte} en présence d'eau.  L'hydrolyse du complexe de \ce{Ti(IV)} est probablement très lente.
+\end{solution}
+\end{mybox}
+
+\question On va commencer par déterminer les concentrations de travail.
+
+\begin{parts}
+\part[1] Calculer la concentration en titane ($IV$) préparée par le technicien.
+
+\begin{mybox}
+\begin{solution}[8cm]
+
+\begin{align*}
+C_{\ce{Ti(IV)}} = \frac{\rho V_0}{M(\ce{TiCl4}) (V_0+\Delta V)}
+\end{align*}
+
+avec $\rho$ la masse volumique de \ce{TiCl4}, $V_0$ le volume prélevé de la solution de \ce{TiCl4}, $M$ la masse molaire de \ce{TiCl4}, $\Delta V$ le volume d'eau ajouté.
+
+\textbf{NB :} Il y a une erreur conceptuelle dans ce calcul, puisque qu'il n'y a pas de raison que le volume du mélange \ce{TiCl4-H2O} fasse \SI{114}{\milli\liter}. Il est fort probable qu'il y a ait contraction du volume lors du mélange, donc que $V_{réel} <  V_0 + \Delta V$.
+
+\textbf{AN :}
+\begin{align*}
+C_{\ce{Ti(IV)}} = \frac{1.726 \times 14}{189.7 \times 0.114} = 1.12 ~ \si{\mole\per\liter}
+\end{align*}
+
+
+\end{solution}
+\end{mybox}
+
+\part[1] Calculer la concentration en titane ($IV$) de votre solution définitive.
+\begin{mybox}
+\begin{solution}[5cm]
+On regarde la relation de dilution :
+\begin{align*}
+C'_{\ce{Ti(IV)}} = \frac{C_{\ce{Ti(IV)}} V_p}{V'}
+\end{align*}
+
+avec $V_p$ le volume prélevé et $V'$ le volume après dilution.
+
+Sinon on peut estimer à partir de la quantité d'hydroxyde ajouté :
+\begin{align*}
+C'_{Ti(IV)} = \frac{n_{\ce{HO-}}}{4 V'} = \frac{C_{NaOH} V_E}{4 V'}
+\end{align*}
+
+avec $V_E$ le volume équivalent de solution de \ce{NaOH} ajoutée et $C_{\ce{NaOH}}$ la concentration en \ce{NaOH} dans la solution préparée.
+\end{solution}
+\end{mybox}
+\end{parts}
+
+\setcounter{foo}{\value{question}}
+\end{questions}
+
+\subsection{Caractérisation de la phase par DRX}
+
+\begin{questions}
+
+\setcounter{question}{\thefoo}
+
+\question[1] Commenter l'utilité du micro-ondes en vous appuyant sur les données DRX.
+
+\begin{mybox}
+\begin{solution}[5cm]
+
+\textbf{Utilité du micro-ondes :} [\textbf{1.0}]
+\begin{itemize}
+\item Chauffage uniforme ;
+\item Diminution des latences par rapport à un chauffage traditionnel ;
+\item Accéleration de la cinétique de formation des matériaux nanoparticulaires.
+\end{itemize}
+
+\textbf{Bilan :} [\textbf{1.0}] Meilleur contrôle de la nucléation et de la croissance des nanoparticules, limitant les effets indésirables comme l'agrégation (murissement) nanoparticulaires.
+
+\end{solution}
+\end{mybox}
+
+\question[5] Caractériser la (ou les) phase(s) formée(s). Est-on plutôt sur un matériau bulk ou sur des nanoparticules ?
+
+\begin{mybox}
+\begin{solution}[5cm]
+
+\textbf{Comparaison $d_{hkl}$ aux tables :} [\textbf{2.0}]
+
+\textbf{Commentaire nature du matériau :} [\textbf{1.0}] Largeur des pics caractéristique de nanoparticules.
+
+\textbf{Détermination des paramètres $a$ et $c$ :} [\textbf{2.0}]
+
+\begin{align*}
+d_{hkl} = \frac{1}{\sqrt{\frac{h^2 + k^2}{a^2} + \left(\frac{l}{c}\right)^2 }}
+\end{align*}
+
+\end{solution}
+\end{mybox}
+
+Il est montré que les nanoparticules d'anatase et de rutile croissent selon des directions privilégiées en fonction des conditions hydrothermales utilisées. Pour simplifier, nous considérerons que les nanoparticules croissent selon la direction $\vec{c}$.
+
+\question
+
+\begin{parts}
+\part[4]Proposer des plans réticulaires qui permettrait de comparer la croissance des deux phases le long de la direction privilégiée. Pour cela, on pourra s'aider de représentations schématiques des familles de plans réticulaires.
+
+\begin{mybox}
+\begin{solution}[8cm]
+\textbf{Plans réticulaires :} [\textbf{1.0}]
+\begin{itemize}
+\item Rutile : $(002)$
+\item Anatase : $(004)$
+\end{itemize}
+\end{solution}
+\end{mybox}
+
+\part[2] En vous aidant des données DRX, vérifier qualitativement l'hypothèse de croissance préférentielle le long de la direction $\vec{c}$.
+\begin{mybox}
+\begin{solution}[5cm]
+\textbf{Démarche} [\textbf{1.0}]
+Comparer la largeur des pics caractéristiques des plans $(002)$ et $(004)$ aux autres pics.\\
+\textbf{Résultat} [\textbf{1.0}]
+Les pics $(002)$ et $(004)$ sont plus larges que les autres pics, ce qui confirme l'hypothèse de croissance préférentielle le long de la direction $\vec{c}$.
+\end{solution}
+\end{mybox}
+
+\end{parts}
+
+%Il est possible à partir de la DRX de caractériser la forme et la taille typique de la nanoparticules. En particulier, dans notre système, la morphologie des nanoparticules est connue, ainsi que l'orientation des plans réticulaires :
+%\begin{center}
+%\includegraphics[width=0.8\textwidth]{figures/Fig04a}
+%\captionof{figure}{Morphologie type des nanoparticules de \textbf{(a)} rutile et \textbf{(b)} d'anatase}
+%\end{center}
+
+\question[6] \`{A} partir de vos acquisitions DRX et de tout modèle qui vous semblera pertinent, caractériser, si possible, l'anisotropie des nanoparticules formées.
+
+\begin{mybox}
+\begin{solution}[8cm]
+
+\textbf{Démarche} [\textbf{1.0}] On peut utiliser la formule de Scherrer pour estimer la taille des nanoparticules à partir de la formule de Laue-Scherrer : 
+\begin{align*}
+L_{hkl} = \frac{0.89 \lambda}{\sqrt{H_{hkl}^2 - s^2} \cos \theta}
+\end{align*}
+
+avec $L_{hkl}$ la largeur du pic dans la direction $[hkl]$, $H_{hkl}$ la largeur à mi-hauteur de l'interférence associée à la famille $(hkl)$, en $rad$, et $s$ l'élargissement "naturel" des pics dû à l'instrumentation et $\theta$ l'angle de diffraction (c-a-d la moitié de celui du diffractogramme).
+
+\textbf{Simplification} [\textbf{1.0}] On se place dans un cadre simplificateur où $H_{hkl} \gg s$, ce qui permet d'estimer au premier ordre la dimension des particules dans les différentes directions : 
+\begin{align*}
+L_{hkl} \approx \frac{0.89 \lambda}{ H_{hkl} \cos \theta}
+\end{align*}
+
+\textbf{Estimation} [\textbf{2.0}] $\lambda = 0.1542$
+
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+Plans & $(101)$ & $(004)$ & $(200)$ & $(105)$ & $(204)$ \\
+\midrule
+$H$ [\si{\centi\meter}] & $0.5$ & $0.5$ & $0.6$ & $0.8$ & $0.5$ \\
+$H$ [\si{{rad}}] & $2.42 \cdot 10^{-2}$ & $2.42 \cdot 10^{-2}$ & $2.91 \cdot 10^{-2}$ & $3.88 \cdot 10^{-2}$ & $2.42 \cdot 10^{-2}$ \\
+$L_{hkl}$ [\si{\nano\meter}] & $5.88$ & $6.07$ & $5.22$ & $4.02$ & $6.72$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+~\
+
+\textbf{\color{red} Mise en relation avec la forme des nanoparticules} IMPOSSIBLE -> soucis sur les schémas précédents.
+
+Particules de quelques nanomètres -> grande surface spécifique ? [\textbf{1.0}] ?
+
+\textbf{Autres méthodes plus avancées} [\textbf{1.0}] Méthode de Scherrer, affinement de Rietveld.
+
+\end{solution}
+\end{mybox}
+
+\setcounter{foo}{\value{question}}
+
+\end{questions}
+
+\newpage 
+
+\section{Tables DRX}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Ann01}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Ann02}
+\end{center}
+
+\newpage
+
+\begin{minipage}{0.33\textwidth}
+Nom-Prénom de l'étudiant
+\end{minipage}\begin{minipage}{0.33\textwidth}
+$n^\circ 1$ :
+\end{minipage}
+
+\section{Approfondissement}
+
+   \subsection{Principe de la cellule de Grätzel}
+Nous allons chercher à utiliser les données et documents suivants afin de comprendre les propriétés fonctionnement de la cellule de Grätzel 
 
 
 \begin{figure}[H]
 \begin{center}
 \begin{tabular}{cc}
 \subfloat[\label{fig:TP1-02a}]{\includegraphics[width=7cm]{figures/Fig02a}} & \subfloat[\label{fig:TP1-02b}]{\includegraphics[width=7cm]{figures/Fig02b}} \\
-\subfloat[\label{fig:TP1-02c}]{\includegraphics[width=7cm]{figures/Fig02c}} & \subfloat[\label{fig:TP1-02d}]{\includegraphics[width=7cm]{figures/Fig02d}} \\
-\subfloat[\label{fig:TP1-02e}]{\includegraphics[width=7cm]{figures/Fig02e}} & \\
+\subfloat[\label{fig:TP1-02c}]{\includegraphics[width=7cm]{figures/Fig02c}} & \subfloat[\label{fig:TP1-02d}]{\includegraphics[width=7cm]{figures/Fig02d}} %\\
+%\subfloat[\label{fig:TP1-02e}]{\includegraphics[width=7cm]{figures/Fig02e}} & \\
 \end{tabular}
 \end{center}
-\caption{\ref{fig:TP1-02a} Spectre du rayonnement solaire avant et après traversée de l'atmosphère ; \ref{fig:TP1-02b} Colorant, aussi appelé chromophore $N_3$, servant de référence dans les cellules de Grätzel ; \ref{fig:TP1-02c} Spectre de génération du photocourant en fonction de la longueur d'onde de l'onde incidente à puissance constante ; \ref{fig:TP1-02d} Représentation schématique du processus ; \ref{fig:TP1-02e} Spectre d'absorption normalisé du verre avec et sans dépôt d'ITO.}
+\caption{\ref{fig:TP1-02a} Spectre du rayonnement solaire avant et après traversée de l'atmosphère ; \ref{fig:TP1-02b} Colorant, aussi appelé chromophore $N_3$, servant de référence dans les cellules de Grätzel ; \ref{fig:TP1-02c} Spectre de génération du photocourant en fonction de la longueur d'onde de l'onde incidente à puissance constante ; \ref{fig:TP1-02d} Représentation schématique du processus.}% ; \ref{fig:TP1-02e} Spectre d'absorption normalisé du verre avec et sans dépôt d'ITO.}
 \end{figure}
 
 \begin{questions}
@@ -197,7 +564,7 @@ En l'absence d'un de ces éléments, le "circuit" est ouvert et on ne peut gén�
 \textbf{Equation de réaction thermodynamiquement favorisée : [0.5]}
 
 \begin{align*}
-\ce{I3^- (aq) + 2  neD^\star (aq) = 2 D+(aq) + 3 I-(aq)}
+\ce{I3^- (aq) + 2  D^\star (aq) = 2 D+(aq) + 3 I-(aq)}
 \end{align*}
 
 \end{solution}
@@ -214,34 +581,34 @@ D'un autre côté, la colorants proposé par l'équipe de Graëtzel présence de
 \end{solution}
 \end{mybox}
 
-De manière contre-intuitive, les semi-conducteurs à petit gap d'énergie présentent des rendements plus faibles que ceux à grand band gap, justifiant en partie l'utilisation de \ce{TiO2}.
-
-\question[1] {\color{red} Identifier une origine physique possible à cette observation.}
-
-\begin{mybox}
-\begin{solution}[5cm]
-
-Un photon fournit une énergie de minimale valant $Eg$. Or, on sait que le travail récupérable du point de vu électrique est fixé par la position du niveau de Fermi.
-
-Ainsi, si les électrons avec une énergie nettement supérieure à l'énergie de gap, ceci conduira à de nombreuses pertes par d'énergie thermique. De plus, le processus de recombinaison est d'autant plus important que le gap est petit.
-
-\end{solution}
-\end{mybox}
-
-\question[2] {\color{red} Sur la base des données ci-dessus, proposer un cahier des charges des propriétés que doit satisfaire l'ITO dans une cellule photovoltaïque.}
-
-\begin{mybox}
-\begin{solution}[5cm]
-On peut lister un ensemble de contraintes techniques :
-\begin{enumerate}
-\item Transparence élevée dans le visible ;
-\item Conductivité électriques élevée ;
-\item Stabilité photochimique, chimique et thermique ;
-\item Adhérence au verre.
-\end{enumerate}
-
-\end{solution}
-\end{mybox}
+%De manière contre-intuitive, les semi-conducteurs à petit gap d'énergie présentent des rendements plus faibles que ceux à grand band gap, justifiant en partie l'utilisation de \ce{TiO2}.
+%
+%\question[1] {\color{red} Identifier une origine physique possible à cette observation.}
+%
+%\begin{mybox}
+%\begin{solution}[5cm]
+%
+%Un photon fournit une énergie de minimale valant $Eg$. Or, on sait que le travail récupérable du point de vu électrique est fixé par la position du niveau de Fermi.
+%
+%Ainsi, si les électrons avec une énergie nettement supérieure à l'énergie de gap, ceci conduira à de nombreuses pertes par d'énergie thermique. De plus, le processus de recombinaison est d'autant plus important que le gap est petit.
+%
+%\end{solution}
+%\end{mybox}
+%
+%\question[2] {\color{red} Sur la base des données ci-dessus, proposer un cahier des charges des propriétés que doit satisfaire l'ITO dans une cellule photovoltaïque.}
+%
+%\begin{mybox}
+%\begin{solution}[5cm]
+%On peut lister un ensemble de contraintes techniques :
+%\begin{enumerate}
+%\item Transparence élevée dans le visible ;
+%\item Conductivité électriques élevée ;
+%\item Stabilité photochimique, chimique et thermique ;
+%\item Adhérence au verre.
+%\end{enumerate}
+%
+%\end{solution}
+%\end{mybox}
 
 \setcounter{foo}{\value{question}}
 \end{questions}
@@ -249,78 +616,7 @@ On peut lister un ensemble de contraintes techniques :
 
 %http://physique.unice.fr/sem6/2011-2012/PagesWeb/PT/Cellule/colorant.html
 
-\section{Synthèse de \ce{TiO2} par voie micro-onde}
 
-\subsection{Protocole}
-
-%**Matériel nécessaire :**  
-%- Solution de TiCl4  
-%- Eau distillée  
-%- Soude (NaOH) 5 mol.L⁻¹  
-%- Acide nitrique (HNO3) 1 mol.L⁻¹  
-%- Réacteurs en téflon compatibles avec un four à micro-ondes monomode (type CEM)  
-%- Centrifugeuse capable d'atteindre 16 500 tours/min (29 220 g)  
-%- Agitateur magnétique  
-%- Pipettes graduées et cylindres mésurants  
-%- Balance précise  
-%- Système de séchage sous vide  
-
-\begin{center}
-\begin{minipage}{0.20\textwidth}
-\centering
-\color{red} \Huge\faWarning
-\end{minipage}\begin{minipage}{0.80\textwidth}
-\color{red} Manipuler le \ce{TiCl4} avec prudence en raison de sa réactivité avec l'eau et de sa toxicité.
-Il faudra prévoir deux DRX : une avant et une après le passage au micro-onde.
-\end{minipage}
-\end{center}
-%\attention{Manipuler le \ce{TiCl4} avec prudence en raison de sa réactivité avec l'eau et de sa toxicité.}
-
-\begin{enumerate}
-\item Hydrolyse du \ce{TiCl4} :
-\begin{itemize}
-   \item Introduire \SI{14,0}{\milli\liter} de solution de \ce{TiCl4} dans \SI{100}{\milli\liter} d'eau distillée avec précaution.  
-   \item Laisser la solution réagir (hydrolyse) à température ambiante pendant une nuit jusqu'à obtention d'une solution limpide.  
-\end{itemize}
-
-\item Ajustement du $pH$ :
-\begin{itemize}
-   \item Ajouter progressivement de la soude à \SI{5}{\mole\per\liter} pour ajuster le $pH$ à $6$ (environ \SI{125}{\milli\liter} nécessaires).  
-   \item Agiter la solution pendant \SI{1}{\hour} à l'aide d'un agitateur magnétique.  
-   \item Contrôler de nouveau le $pH$ et ajuster si nécessaire. 
-\end{itemize}
- 
-
-\item Dilution : Compléter la solution avec de l'eau distillée jusqu'à atteindre un volume total de \SI{250}{\milli\liter}, de sorte à obtenir une concentration finale en \ce{Ti^{4+}} de \SI{0.5}{\mole\per\liter}.  
-
-\item Traitement Hydrothermal
-\begin{itemize}
-   \item Sous agitation, transférer la suspension dans des réacteurs en téflon.  
-   \item Placer les réacteurs dans un four à micro-ondes monomode (CEM).
-   \item Chauffer la suspension à \SI{200}{\celsius} en \SI{10}{\minute}, puis maintenir cette température pendant \SI{1}{\hour}.  
-   \item La pression interne du réacteur devrait atteindre environ $14$-\SI{15}{\bar}.  
-\end{itemize}
-
-\item Récupération du Solide  : \`{A} la sortie du réacteur, séparer les suspensions par centrifugation à \SI{16500}{{tour}\per\minute} pendant \SI{20}{\minute}.% (29 220 g).  
-
-\item Lavages Successifs
-\begin{itemize}
-\item Effectuer un premier lavage du précipité à l'eau distillée.  
-\item Procéder à un lavage avec de l'acide nitrique (\ce{HNO3}) à \SI{1}{\mole\per\liter}.  
-\item Effectuer un dernier lavage à l'eau distillée.  
-\end{itemize}
-
-\item Séchage du Solide
-\begin{itemize}
-\item Placer le solide obtenu dans un système de séchage sous vide à température ambiante.  
-\item Laisser sécher pendant une nuit. 
-\end{itemize} 
-\end{enumerate}
-
-%- Porter des équipements de protection individuelle (gants, lunettes, blouse de laboratoire).  
-%- Effectuer les manipulations sous hotte aspirante lorsque nécessaire.  
-
-Ce protocole permet d'obtenir un solide à base de titane par méthode hydrothermale.
 
 \subsection{Analyse du protocole}
 
@@ -346,54 +642,6 @@ Ce protocole permet d'obtenir un solide à base de titane par méthode hydrother
 
 %\question Que se passe-t-il lorsque la solution devient limpide ? \'{E}crire le processus associé à cette réaction.
 
-
-\begin{questions}
-\setcounter{question}{\thefoo}
-\question On va commencer par déterminer les concentrations de travail.
-
-\begin{parts}
-\part[1] Calculer la concentration en titane ($IV$) préparée par le technicien.
-
-\begin{mybox}
-\begin{solution}[8cm]
-
-\begin{align*}
-C_{\ce{Ti(IV)}} = \frac{\rho V_0}{M(\ce{TiCl4}) (V_0+\Delta V)}
-\end{align*}
-
-avec $\rho$ la masse volumique de \ce{TiCl4}, $V_0$ le volume prélevé de la solution de \ce{TiCl4}, $M$ la masse molaire de \ce{TiCl4}, $\Delta V$ le volume d'eau ajouté.
-
-\textbf{NB :} Il y a une erreur conceptuelle dans ce calcul, puisque qu'il n'y a pas de raison que le volume du mélange \ce{TiCl4-H2O} fasse \SI{114}{\milli\liter}. Il est fort probable qu'il y a ait contraction du volume lors du mélange, donc que $V_{réel} <  V_0 + \Delta V$.
-
-\textbf{AN :}
-\begin{align*}
-C_{\ce{Ti(IV)}} = \frac{1.726 \times 14}{189.7 \times 0.114} = 1.12 ~ \si{\mole\per\liter}
-\end{align*}
-
-
-\end{solution}
-\end{mybox}
-
-\part[1] Calculer la concentration en titane ($IV$) de votre solution définitive.
-\begin{mybox}
-\begin{solution}[5cm]
-On regarde la relation de dilution :
-\begin{align*}
-C'_{\ce{Ti(IV)}} = \frac{C_{\ce{Ti(IV)}} V_p}{V'}
-\end{align*}
-
-avec $V_p$ le volume prélevé et $V'$ le volume après dilution.
-
-Sinon on peut estimer à partir de la quantité d'hydroxyde ajouté :
-\begin{align*}
-C'_{Ti(IV)} = \frac{n_{\ce{HO-}}}{4 V'} = \frac{C_{NaOH} V_E}{4 V'}
-\end{align*}
-
-avec $V_E$ le volume équivalent de solution de \ce{NaOH} ajoutée et $C_{\ce{NaOH}}$ la concentration en \ce{NaOH} dans la solution préparée.
-\end{solution}
-\end{mybox}
-\end{parts}
-
 Les processus de synthèse de \ce{TiO2} est réalisé par une succession de condensations nécessitant le départ d'un précurseur monomérique de formule brut : 
 
 \begin{align*}
@@ -402,14 +650,7 @@ Les processus de synthèse de \ce{TiO2} est réalisé par une succession de cond
 
 avec $h$ la st{\oe}chiométrie en ions hydroxyde dans le complexe, aussi appelé taux d'hydrolyse.
 
-\question[2] Justifier que le technicien ait laissé la solution s'hydrolyser pendant toute la nuit.
 
-\begin{mybox}
-\begin{solution}[5cm]
-
-\ce{Cl-} est un ligand plus dur \ce{H2O}. Le \ce{Ti} étant à haut degré d'oxydation, il est probablement assez dur, rendant le complexe relativement \textbf{inerte} en présence d'eau.  L'hydrolyse du complexe de \ce{Ti(IV)} est probablement très lente.
-\end{solution}
-\end{mybox}
 
 Le taux d'hydrolyse du titane hydraté à température ambiante a été "étalonné" en fonction du $pH$ de la solution 
 
@@ -417,6 +658,9 @@ Le taux d'hydrolyse du titane hydraté à température ambiante a été "étalon
 h = \frac{1.0584 + 0.3181 pH}{0.6794 + 0.01776 pH}
 \label{eq:h_Tamb}
 \end{align}
+
+\begin{questions}
+\setcounter{question}{\thefoo}
 
 \question Nous allons chercher à caractériser les complexes de titane précurseurs éventuellement formés.
 
@@ -763,195 +1007,6 @@ D &= - \frac{0.0345}{\sqrt{\chi_H}}
 
 \end{questions}
 
-\subsection{Caractérisation de la phase}
-
-\begin{questions}
-
-\setcounter{question}{\thefoo}
-
-\question[1] Commenter l'utilité du micro-ondes en vous appuyant sur les données DRX.
-
-\begin{mybox}
-\begin{solution}[5cm]
-
-\textbf{Utilité du micro-ondes :} [\textbf{1.0}]
-\begin{itemize}
-\item Chauffage uniforme ;
-\item Diminution des latences par rapport à un chauffage traditionnel ;
-\item Accéleration de la cinétique de formation des matériaux nanoparticulaires.
-\end{itemize}
-
-\textbf{Bilan :} [\textbf{1.0}] Meilleur contrôle de la nucléation et de la croissance des nanoparticules, limitant les effets indésirables comme l'agrégation (murissement) nanoparticulaires.
-
-\end{solution}
-\end{mybox}
-
-\question[5] Caractériser la (ou les) phase(s) formée(s). Est-on plutôt sur un matériau bulk ou sur des nanoparticules ?
-
-\begin{mybox}
-\begin{solution}[5cm]
-
-\textbf{Comparaison $d_{hkl}$ aux tables :} [\textbf{2.0}]
-
-\textbf{Commentaire nature du matériau :} [\textbf{1.0}] Largeur des pics caractéristique de nanoparticules.
-
-\textbf{Détermination des paramètres $a$ et $c$ :} [\textbf{2.0}]
-
-\begin{align*}
-d_{hkl} = \frac{1}{\sqrt{\frac{h^2 + k^2}{a^2} + \left(\frac{l}{c}\right)^2 }}
-\end{align*}
-
-\end{solution}
-\end{mybox}
-
-Il est possible à partir de la DRX de caractériser la forme et la taille typique de la nanoparticules. En particulier, dans notre système, la morphologie des nanoparticules est connue, ainsi que l'orientation des plans réticulaires :
-\begin{center}
-\includegraphics[width=0.8\textwidth]{figures/Fig04a}
-\captionof{figure}{Morphologie type des nanoparticules de \textbf{(a)} rutile et \textbf{(b)} d'anatase}
-\end{center}
-
-\question[6] \`{A} partir de vos acquisitions DRX et de tout modèle qui vous semblera pertinent, caractériser, si possible, la morphologie des nanoparticules formées.
-
-\begin{mybox}
-\begin{solution}[5cm]
-
-\textbf{Démarche} [\textbf{1.0}] On peut utiliser la formule de Scherrer pour estimer la taille des nanoparticules à partir de la formule de Laue-Scherrer : 
-\begin{align*}
-L_{hkl} = \frac{0.89 \lambda}{\sqrt{H_{hkl}^2 - s^2} \cos \theta}
-\end{align*}
-
-avec $L_{hkl}$ la largeur du pic dans la direction $[hkl]$, $H_{hkl}$ la largeur à mi-hauteur de l'interférence associée à la famille $(hkl)$, en $rad$, et $s$ l'élargissement "naturel" des pics dû à l'instrumentation et $\theta$ l'angle de diffraction (c-a-d la moitié de celui du diffractogramme).
-
-\textbf{Simplification} [\textbf{1.0}] On se place dans un cadre simplificateur où $H_{hkl} \gg s$, ce qui permet d'estimer au premier ordre la dimension des particules dans les différentes directions : 
-\begin{align*}
-L_{hkl} \approx \frac{0.89 \lambda}{ H_{hkl} \cos \theta}
-\end{align*}
-
-\textbf{Estimation} [\textbf{2.0}] $\lambda = 0.1542$
-
-\begin{center}
-\begin{tabular}{cccccc}
-\toprule
-Plans & $(101)$ & $(004)$ & $(200)$ & $(105)$ & $(204)$ \\
-\midrule
-$H$ [\si{\centi\meter}] & $0.5$ & $0.5$ & $0.6$ & $0.8$ & $0.5$ \\
-$H$ [\si{{rad}}] & $2.42 \cdot 10^{-2}$ & $2.42 \cdot 10^{-2}$ & $2.91 \cdot 10^{-2}$ & $3.88 \cdot 10^{-2}$ & $2.42 \cdot 10^{-2}$ \\
-$L_{hkl}$ [\si{\nano\meter}] & $5.88$ & $6.07$ & $5.22$ & $4.02$ & $6.72$ \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-~\
-
-\textbf{\color{red} Mise en relation avec la forme des nanoparticules} IMPOSSIBLE -> soucis sur les schémas précédents.
-
-Particules de quelques nanomètres -> grande surface spécifique ? [\textbf{1.0}] ?
-
-\textbf{Autres méthodes plus avancées} [\textbf{1.0}] Méthode de Scherrer, affinement de Rietveld.
-
-\end{solution}
-\end{mybox}
-
-\setcounter{foo}{\value{question}}
-
-\end{questions}
-
-\section{Synthèse et dépôt de la couche d'ITO}
-
-
-\begin{enumerate}
-\item Préparation de la solution (Sol) : Une solution d'ITO à \SI{10}{\percent} en masse d'étain a été préparée par le technicien et pourra être utilisée dans ce TP.
-
-\item Procédure de Dépôt par Dip-Coating :
-\begin{enumerate}
-\item Préparation des substrats : Nettoyer les plaques de verre à l'eau distillée, à l'éthanol, puis sécher à l'air.  %- Éventuellement, traiter par plasma pour améliorer l’adhérence.
-\item Dépôt du film : 
-\begin{enumerate}
-\item Préparer un bécher de \SI{25}{\milli\liter} contenant le sol ;
-\item Règler le dip coater à une vitesse d'immersion de \SI{10}{\centi\meter\per\minute}, un temps de séjour de \SI{1}{\minute}.
-\item Récupérer vos plaques de verre et laisser les sécher à l'air libre
-\end{enumerate}
-
-\item Traitement thermique (recuit) : Chauffer les échantillons à \SI{650}{\celsius} pendant \SI{30}{\minute} dans l'air dans un des fours à moufle.
-
-Pour obtenir des films plus épais ($~ \sim 200$-\SI{300}{\nano\meter}), répéter le cycle dépôt-séchage-recuit plusieurs fois. 
-
-Une autre étude a montré l'influence du temps de recuit sur la transmittance de la plaque d'ITO.
-
-\begin{center}
-\begin{minipage}{0.48\textwidth}
-\includegraphics[width=\textwidth]{figures/Fig05b}
-\end{minipage}\begin{minipage}{0.48\textwidth}
-\captionof{figure}{Evolution de la transmittance de la plaque d'ITO en fonction de la longueur d'onde pour des couches de \SI{250}{\nano\meter} d'épaisser et une température de recuit de \SI{400}{\celsius}, \SI{500}{\celsius} et \SI{600}{\celsius}}
-\end{minipage}
-\end{center}
-
-\end{enumerate}
-\item Caractérisations possibles : ohmmètre, brillancemètre, colorimètre et DRX.
-\end{enumerate}
-
-Les conditions optimales que l'on peut espérer avec cette procédure selon la littérature sont les suivantes : 
-\begin{itemize}
-\item Résistivité optimale : $\rho = 1.7 \cdot 10^{-3} ~ \si{\ohm\centi\meter}$ ;
-\item Transmittance dans le visible : $> 90 ~ \si{\percent}$
-\end{itemize}
-
-\begin{questions}
-\setcounter{question}{\thefoo}
-\question[2] Quelle est l'influence de la vitesse d'immersion du dip-coater sur l'épaisseur de la couche déposée ?
-
-\begin{mybox}
-\begin{solution}[5cm]
-
-\textbf{Relation de Landau-Levich} [\textbf{1.0}] Pour de faibles vitesse et des effets capillaires dominant devant le poids, l'épaisseur vaut :
-
-\begin{align*}
-e \propto \frac{(\eta V)^{2/3}}{\gamma^{1/6} \rho g}
-\end{align*}
-
-avec $\gamma$ le coefficient de tension de surface,  $\rho$ la masse volumique du fluide, $g$ le champ de pesanteur, $\eta$ la c{\oe}fficient de tension de surface et $V$ la vitesse de sortie de la plaque du fluide.
-
-\textbf{Interprétation} [\textbf{1.0}] A priori, plus la vitesse de sortie de la plaquée est elevée et plus l'épaisseur de liquide est élevée.
-
-\end{solution}
-\end{mybox}
-
-Dans des conditions opératoires similaires aux nôtres, une équipe de chercheur a établi un lien entre la taille des cristallites du sol, la température de recuit et la résistivité du milieu : 
-\begin{center}
-\begin{minipage}{0.46\textwidth}
-\includegraphics[width=\textwidth]{figures/Fig05}
-\end{minipage}\hfill\begin{minipage}{0.46\textwidth}
-\captionof{figure}{Relation entre la taille des cristallites, la conductivité et la température de recuit pour un sol de concentration \SI{0.7}{\mole\per\liter}, 2 cycles dépôt-séchage-recuit et une vitesse d'immersion \SI{6}{\centi\meter\per\minute}}
-\end{minipage}
-\end{center}
-
-\question[3] D'après ce graphe, que peut-on dire des conditions de recuit utilisées ? Quelle relation structure-propriété peut-on établir ?
-
-\begin{mybox}
-\begin{solution}[5cm]
-
-\textbf{Influence sur la taille :} [\textbf{1.0}] Formation de cristaux de grande taille ($\approx 15 ~ \si{\nano\meter}$)
-
-\textbf{Influence sur la résistivité :} [\textbf{1.0}] permet d'arriver à des valeurs conformes avec un bon semi-conducteur $\sigma \sim 10^3 ~ \si{\siemens\per\centi\meter}$
-
-\textbf{Relation structure-propriété :} [\textbf{1.0}] Taille de grain importante est corrélée à une bonne conductivité, ce qui est conforme avec la diminution de la densité volumique de joints de grain, source de déperdition d'énergie.
-
-\end{solution}
-\end{mybox}
-
-\question[2] Mesurer l'évolution des paramètres en fonction du nombre de cycles dépôt-séchage-recuit. Commenter les évolutions observées.
-
-\begin{mybox}
-\begin{solution}[5cm]
-
-L'augmentation du nombre de couche déposée, consistante avec une augmentation de l'épaisseur d'ITO, se traduit par une augmentation de la résistance du matériau (dépendant aussi de paramètres géométriques de la couche déposée)
-
-\end{solution}
-\end{mybox}
-
-\setcounter{foo}{\thequestion}
-\end{questions}
-
 \newpage
 
 \section*{Barème}
@@ -976,18 +1031,6 @@ $n^\circ 2$ :
 \begin{center}
 \gradetable
 \bonusgradetable
-\end{center}
-
-\newpage 
-
-\section{Tables DRX}
-
-\begin{center}
-\includegraphics[width=\textwidth]{figures/Ann01}
-\end{center}
-
-\begin{center}
-\includegraphics[width=\textwidth]{figures/Ann02}
 \end{center}
 
 \end{document}

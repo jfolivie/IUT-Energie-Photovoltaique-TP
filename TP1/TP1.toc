@@ -1,8 +1,10 @@
 \babel@toc {french}{}\relax 
-\contentsline {section}{\numberline {1. }Questions introductives}{3}{section.1}%
-\contentsline {section}{\numberline {2. }Synthèse de \ce {TiO2} par voie micro-onde}{5}{section.2}%
-\contentsline {subsection}{\numberline {2. 1. }Protocole}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2. 2. }Analyse du protocole}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2. 3. }Caractérisation de la phase}{13}{subsection.2.3}%
-\contentsline {section}{\numberline {3. }Synthèse et dépôt de la couche d'ITO}{14}{section.3}%
-\contentsline {section}{\numberline {4. }Tables DRX}{18}{section.4}%
+\contentsline {section}{\numberline {1. }Questions introductives}{2}{section.1}%
+\contentsline {section}{\numberline {2. }Synthèse de \ce {TiO2} par voie micro-onde}{3}{section.2}%
+\contentsline {subsection}{\numberline {2. 1. }Protocole}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2. 2. }Questions sur la synthèse de \ce {TiO2}}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2. 3. }Caractérisation de la phase par DRX}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3. }Tables DRX}{8}{section.3}%
+\contentsline {section}{\numberline {4. }Approfondissement}{10}{section.4}%
+\contentsline {subsection}{\numberline {4. 1. }Principe de la cellule de Grätzel}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4. 2. }Analyse du protocole}{11}{subsection.4.2}%
