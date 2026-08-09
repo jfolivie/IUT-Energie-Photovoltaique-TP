@@ -1,6 +1,6 @@
 ## Citation
 Merci de citer ce cours comme suit :
-TO_COMPLETE
+OLIVIERI, J.-F. (2026, August 8). Matériaux pour l'énergie : photovoltaïque - Travaux pratiques : assemblage d'une cellule à colorant. Zenodo. https://doi.org/10.5281/zenodo.21852628
 
 ## Public visé
 Étudiants en Bachelor Universitaire de Technologie de Chimie. 3e année, spécialité : matériaux inorganiques.
